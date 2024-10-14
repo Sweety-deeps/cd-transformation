@@ -6,7 +6,7 @@ EXPOSE 80
 # Use the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["test/cdtransformation.tests/cdtransformation.tests.csproj", "MyApp/"]
+COPY ["test/cdtransformation.tests/cdtransformation.tests.csproj", "test/cdtransformation.tests"]
 RUN dotnet restore "test/cdtransformation.tests/cdtransformation.tests.csproj"
 COPY . .
 WORKDIR "/src/MyApp"
