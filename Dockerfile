@@ -7,7 +7,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["test/cdtransformation.tests/cdtransformation.tests.csproj", "MyApp/"]
-RUN dotnet restore "cdtransformation.tests/cdtransformation.tests.csproj"
+RUN dotnet restore "test/cdtransformation.tests/cdtransformation.tests.csproj"
 COPY . .
 WORKDIR "/src/MyApp"
 RUN dotnet build "test/cdtransformation.tests/cdtransformation.tests.csproj" -c Release -o /app/build
