@@ -5,7 +5,7 @@ EXPOSE 80
 
 # Use the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
+WORKDIR /src/test/cdtransformation.tests
 
 # Copy the project file and restore dependencies
 COPY ["test/cdtransformation.tests/cdtransformation.tests.csproj", "test/cdtransformation.tests"]
